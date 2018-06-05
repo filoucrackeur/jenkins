@@ -7,7 +7,7 @@ pipeline {
        
       step("Build 1"){
         echo "build..."
-     
+      }
      }
    }
   }
