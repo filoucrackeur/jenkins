@@ -2,14 +2,14 @@ pipeline {
     agent any 
     stages {
         stage('Build') { 
-                parallel {
-                       stage('Assets generation') { 
-                           
-                       }
-                       stage('Installation composer') { 
-                           
-                       }
-                }
+            parallel {
+                   stage('Assets generation') { 
+                        echo "test...."
+                   }
+                   stage('Installation composer') { 
+                        echo "test...."
+                   }
+            }
         }
         stage('Test') { 
             steps {
