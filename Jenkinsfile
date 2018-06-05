@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                echo ${env.GIT_BRANCH}
+                echo "${env.GIT_BRANCH}"
                 echo "test...."
             }
         }
