@@ -27,8 +27,20 @@ pipeline {
             }
         }
         stage('Deploy') { 
+            when {
+                branch 'master'
+                environment name: 'TYPO3_CONTEXT', value: 'Production'
+            }
+            when {
+                branch 'qua'
+                environment name: 'TYPO3_CONTEXT', value: 'Testing/Qua'
+            }
+            when {
+                branch 'development'
+                environment name: 'TYPO3_CONTEXT', value: 'Development/Qua'
+            }
             steps {
-                echo "deploy...."
+                echo 'Deploying'
             }
         }
     }
