@@ -16,33 +16,26 @@ pipeline {
                    }
                    stage('Installation composer') { 
                        steps {
-                        echo "tests...."
+                        echo "test...."
                        }
                    }
             }
         }
         stage('Test') { 
             steps {
+                echo "${env.GIT_BRANCH}"
                 echo "test...."
             }
         }
         stage('Deploy') { 
             when {
-                branch 'master'
-                environment name: 'TYPO3_CONTEXT', value: 'Production'
-            }
-            when {
-                branch 'qua'
-                environment name: 'TYPO3_CONTEXT', value: 'Testing/Qua'
-            }
-            when {
-                branch 'development'
-                environment name: 'TYPO3_CONTEXT', value: 'Development/Qua'
+                expression {
+                    BRANCH_NAME == 'master'
+                }
             }
             steps {
-                echo 'Deploying'
+                echo 'Deploying prod'
             }
         }
     }
 }
-
