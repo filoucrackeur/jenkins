@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Deploy') { 
             when {
-                branch 'master'
+                branch 'origin/master'
                 environment name: 'TYPO3_CONTEXT', value: 'Production'
             }
             steps {
