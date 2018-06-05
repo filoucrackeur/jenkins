@@ -4,6 +4,14 @@ pipeline {
         stage('Build') { 
             steps {
                 echo "Build...."
+                parallel {
+                       stage('Assets generation') { 
+                           
+                       }
+                       stage('Installation composer') { 
+                           
+                       }
+                }
             }
         }
         stage('Test') { 
