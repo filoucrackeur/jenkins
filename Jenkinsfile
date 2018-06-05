@@ -16,7 +16,7 @@ pipeline {
                    }
                    stage('Installation composer') { 
                        steps {
-                        echo "test...."
+                        echo "tests...."
                        }
                    }
             }
