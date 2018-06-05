@@ -1,5 +1,8 @@
 pipeline {
     agent any 
+    parameters {
+        string(name: 'TYPO3_CONTEXT', defaultValue: 'Development/Qua', description: 'Environnement TYPO3')
+    }
     stages {
         stage('Build') { 
             parallel {
