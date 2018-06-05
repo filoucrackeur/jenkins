@@ -29,8 +29,9 @@ pipeline {
         }
         stage('Deploy') { 
             when {
-                branch 'origin/master'
-                environment name: 'TYPO3_CONTEXT', value: 'Production'
+                expression {
+                    return ${env.GIT_BRANCH} == 'master'
+                }
             }
             steps {
                 echo 'Deploying prod'
