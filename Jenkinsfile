@@ -1,5 +1,8 @@
 pipeline {
     agent any 
+    environement {
+        TYPO3_CONTEXT = 'Development'
+    }
     parameters {
         string(name: 'TYPO3_CONTEXT', defaultValue: 'Development/Qua', description: 'Environnement TYPO3')
     }
