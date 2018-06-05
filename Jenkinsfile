@@ -30,7 +30,7 @@ pipeline {
         stage('Deploy') { 
             when {
                 expression {
-                    return ${env.GIT_BRANCH} == 'master'
+                    BRANCH_NAME == 'master'
                 }
             }
             steps {
