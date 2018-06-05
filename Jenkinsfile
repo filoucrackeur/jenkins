@@ -1,6 +1,6 @@
 pipeline {
     agent any 
-    environement {
+    environment {
         TYPO3_CONTEXT = 'Development'
     }
     parameters {
