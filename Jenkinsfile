@@ -2,8 +2,6 @@ pipeline {
     agent any 
     stages {
         stage('Build') { 
-            steps {
-                echo "Build...."
                 parallel {
                        stage('Assets generation') { 
                            
@@ -12,7 +10,6 @@ pipeline {
                            
                        }
                 }
-            }
         }
         stage('Test') { 
             steps {
