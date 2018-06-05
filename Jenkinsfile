@@ -31,16 +31,22 @@ pipeline {
                 branch 'master'
                 environment name: 'TYPO3_CONTEXT', value: 'Production'
             }
+            steps {
+                echo 'Deploying prod'
+            }
             when {
                 branch 'qua'
                 environment name: 'TYPO3_CONTEXT', value: 'Testing/Qua'
+            }
+            steps {
+                echo 'Deploying qualité'
             }
             when {
                 branch 'development'
                 environment name: 'TYPO3_CONTEXT', value: 'Development/Qua'
             }
             steps {
-                echo 'Deploying'
+                echo 'Deploying dev'
             }
         }
     }
