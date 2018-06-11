@@ -10,8 +10,9 @@ pipeline {
         stage('Build') { 
             parallel {
                    stage('Assets generation') { 
+                                                  input message: 'Environnement à deployer ?', ok: 'Deployer', parameters: [choice(choices: ['Development/Qua', 'Development/Tma', 'Testing/Qua', 'Testing/Tma', 'Testing/Prj', 'Testing/Preprod', 'Production'], description: '', name: 'environnement')]
+
                        steps {
-                           input message: 'Environnement à deployer ?', ok: 'Deployer', parameters: [choice(choices: ['Development/Qua', 'Development/Tma', 'Testing/Qua', 'Testing/Tma', 'Testing/Prj', 'Testing/Preprod', 'Production'], description: '', name: 'environnement')]
 
                         echo "test...."
                        }
